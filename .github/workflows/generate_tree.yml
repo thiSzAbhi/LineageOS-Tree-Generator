@@ -10,7 +10,7 @@ on:
       DUMP_BRANCH:
         description: 'Dump branch'
         required: true
-        default: ''
+        default: 'dump-CPH1717-20240629'
       DEVICE_BRAND:
         description: 'Device manufacturer'
         required: true
@@ -72,7 +72,7 @@ jobs:
         sudo mkdir LOS-Generator
         sudo chmod 777 LOS-Generator
         cd LOS-Generator
-        git clone ${{ env.DU }} -b ${{ env.DUB }}
+        git clone ${{ env.DU }} -b dump-CPH1717-20240629
 
     - name: Installing AOSPDTGEN
       id: setup-aosp-dtgen
