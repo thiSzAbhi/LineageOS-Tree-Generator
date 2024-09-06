@@ -24,7 +24,7 @@ on:
         required: true
         default: ''
       GIT_EMAIL:
-        description: 'GitHub account email adress'
+        description: 'GitHub account email address'
         required: true
         default: ''
 
@@ -36,7 +36,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.LOS }}
       DU: ${{ github.event.inputs.DUMP_URL }}
-      DB: ${{ github.event.inputs.DEVICE_BRAND}}
+      DB: ${{ github.event.inputs.DEVICE_BRAND }}
       DUB: ${{ github.event.inputs.DUMP_BRANCH }}
       CN: ${{ github.event.inputs.CODENAME }}
       GN: ${{ github.event.inputs.GIT_NAME }}
@@ -46,7 +46,6 @@ jobs:
       contents: write
     steps:
     - name: Check Out
-      if: check-out
       uses: actions/checkout@v4
 
     - name: Update and install required packages
